@@ -1,0 +1,52 @@
+
+<center>
+<h1><%= @item_collection.title %></h1>
+<p id="notice"><%= notice %></p>
+</center>
+<p>
+  <strong>Description:</strong>
+  <%= @item_collection.description %>
+</p>
+<table>
+  <td>
+  <%= button_to 'Add New Item', "/item_collections/#{@item_collection.id}/add_item" ,method: :get, class: "btn btn-primary btn-sm" %>
+  </td>
+  <td>
+  	<%= button_to 'Add Item from library', "/item_collections/#{@item_collection.id}/add_item_from_lib" ,method: :get, class: "btn btn-primary btn-sm" %>
+  </td>
+  <td>
+  	<%= button_tag 'Sort Items',method: :get, class: "btn btn-primary btn-sm", controller: "item_collections", action: "show", id: @item_collection.id, sort: true  %>
+  </td>
+  <td>
+  	<%= button_to 'Edit', edit_item_collection_path(@item_collection) , method: :get,class: "btn btn-primary btn-sm" %>
+  </td>
+  <td>
+   	<%= button_to 'Back', item_collections_path ,method: :get, class: "btn btn-primary btn-sm" %>
+  </td>
+</table>
+
+<p>
+    
+	<table class= "table table-bordered table-striped">
+	  <thead>
+	    <tr>
+	      <th></th>
+	      <th>Title</th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	  <br>
+	  <% if @items.present? %>
+		  <% @items.each_with_index do |item,index| %>
+		    <tr>
+		    	<td><%= index+1 %>.</td>
+		        <td><%= link_to item.title, item %></td>
+		    </tr>
+		  <% end %>
+	  <% end %>
+	  </tbody>
+	</table>
+</p>
+
+

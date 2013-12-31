@@ -1,0 +1,16 @@
+<div >
+	<table>
+		 <td>
+		     <%= button_to 'Back', item_collections_path ,method: :get,class: "btn btn-warning",style: "margin-left : 25px;margin-top:10px;margin-right:400px;" %>
+		 </td>
+		 <td>
+		     <center> <h1>Editing Item Collection</h1> </center>
+		 </td>  
+	</table>
+</div>
+<br><br><br>
+
+<%= render 'form' %>
+
+<%#= link_to 'Show', @item_collection %> |
+<%#= link_to 'Back', item_collections_path %>

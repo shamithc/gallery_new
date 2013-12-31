@@ -1,0 +1,35 @@
+<div >
+  <center> <h1>Listing Item Collections</h1> </center>
+  <!-- <button type="button" class="btn btn-success">Success</button>
+  <%= link_to 'New Item collection', new_item_collection_path %> -->
+  <%= button_to 'New Item collection',new_item_collection_path, method: :get,class: "btn btn-success" ,style: "float:right; margin: 10px 18px 20px 0px;" %>
+</div>
+
+
+<table class="table table-bordered table-striped" >
+ <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @item_collections.each do |item_collection| %>
+      <tr>
+        <td><%= item_collection.title %></td>
+        <td><%= item_collection.description %></td>
+        <td><%= link_to 'Show', item_collection %></td>
+        <td><%= link_to 'Edit', edit_item_collection_path(item_collection) %></td>
+        <td><%= link_to 'Destroy', item_collection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+

@@ -1,0 +1,23 @@
+<center>
+<p>
+  <h1>Add Item from Library</h1>
+</p>
+</center>
+
+<% if @items.present? %>
+<%= form_tag("/item_collections/#{params[:id]}/create_item",class: "form-horizontal") do%>
+  <ul>
+  <% @items.each do |item| %>
+    
+        <div class="checkbox form-group">
+        <%= check_box_tag 'item_ids[]', item.id -%>
+        <%= h item.title -%>
+        </div>
+     
+  <% end %>
+</ul>
+<%= submit_tag "Save",class: "btn btn-primary" %>  
+<% end %>
+<% else %>
+	<h3>Empty Item Library</h3>
+<% end %>

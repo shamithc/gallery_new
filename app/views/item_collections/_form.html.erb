@@ -1,0 +1,44 @@
+
+<%= form_for(@item_collection, class: "form-horizontal") do |f|  %>
+  <% if @item_collection.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item_collection.errors.count, "error") %> prohibited this item_collection from being saved:</h2>
+
+      <ul>
+      <% @item_collection.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<!--   <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+    </div>
+  </div> -->
+  <center>
+    <div class="form-group">
+      <%= f.label :title , class: "col-sm-2 control-label" %>
+      <div class="col-sm-4">
+      <%= f.text_field :title, class: "form-control", placeholder: "Title"%>
+      </div>
+    </div>
+    <br><br><br><br>
+    <div class="form-group">
+      <%= f.label :description , class: "col-sm-2 control-label" %>
+      <div class="col-sm-4">
+      <%= f.text_area :description, class: "form-control", placeholder: "Description"%>
+      </div>
+    </div>
+  </center>
+
+    <br><br><br><br>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+      </div>
+    </div>
+
+<% end %>

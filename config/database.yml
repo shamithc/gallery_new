@@ -1,0 +1,25 @@
+# Database configurations
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: gallery_development
+  pool: 5
+  username: qbadmin 
+  password: qburst
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: gallery_test
+  pool: 5
+  username: qbadmin 
+  password: qburst
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: gallery_deveopment
+  pool: 5
+  username: qbadmin 
+  password: qburst
